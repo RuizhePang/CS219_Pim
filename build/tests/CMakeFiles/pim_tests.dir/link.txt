@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -Wpedantic CMakeFiles/pim_tests.dir/core_tests.cpp.o CMakeFiles/pim_tests.dir/mode_tests.cpp.o CMakeFiles/pim_tests.dir/command_tests.cpp.o -o pim_tests  -Wl,-rpath,/home/ubuntu/anaconda3/lib /home/ubuntu/anaconda3/lib/libgtest.so.1.11.0 ../src/libcore_lib.a ../src/libmodes_lib.a -lpthread
