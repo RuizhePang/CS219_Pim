@@ -22,6 +22,7 @@ src/CMakeFiles/pim.dir/main.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/main.cpp \
   /usr/include/c++/13/bits/cpp_type_traits.h \
   /usr/include/c++/13/bits/cxxabi_forced.h \
   /usr/include/c++/13/bits/cxxabi_init_exception.h \
+  /usr/include/c++/13/bits/deque.tcc \
   /usr/include/c++/13/bits/exception.h \
   /usr/include/c++/13/bits/exception_defines.h \
   /usr/include/c++/13/bits/exception_ptr.h \
@@ -54,11 +55,13 @@ src/CMakeFiles/pim.dir/main.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/main.cpp \
   /usr/include/c++/13/bits/stl_algobase.h \
   /usr/include/c++/13/bits/stl_bvector.h \
   /usr/include/c++/13/bits/stl_construct.h \
+  /usr/include/c++/13/bits/stl_deque.h \
   /usr/include/c++/13/bits/stl_function.h \
   /usr/include/c++/13/bits/stl_iterator.h \
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
   /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_stack.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
   /usr/include/c++/13/bits/stl_vector.h \
   /usr/include/c++/13/bits/streambuf.tcc \
@@ -79,6 +82,7 @@ src/CMakeFiles/pim.dir/main.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/main.cpp \
   /usr/include/c++/13/cwctype \
   /usr/include/c++/13/debug/assertions.h \
   /usr/include/c++/13/debug/debug.h \
+  /usr/include/c++/13/deque \
   /usr/include/c++/13/exception \
   /usr/include/c++/13/ext/alloc_traits.h \
   /usr/include/c++/13/ext/atomicity.h \
@@ -93,6 +97,7 @@ src/CMakeFiles/pim.dir/main.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/main.cpp \
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/pstl/pstl_config.h \
+  /usr/include/c++/13/stack \
   /usr/include/c++/13/stdexcept \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
@@ -309,7 +314,9 @@ src/CMakeFiles/pim.dir/main.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
-/usr/include/c++/13/bits/stl_uninitialized.h:
+/usr/include/x86_64-linux-gnu/bits/cpu-set.h:
+
+/usr/include/x86_64-linux-gnu/bits/byteswap.h:
 
 /usr/include/c++/13/bits/stl_algobase.h:
 
@@ -322,8 +329,6 @@ src/CMakeFiles/pim.dir/main.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/main.cpp \
 /usr/include/c++/13/debug/debug.h:
 
 /usr/include/c++/13/stdexcept:
-
-/usr/include/x86_64-linux-gnu/bits/cpu-set.h:
 
 /usr/include/c++/13/bits/invoke.h:
 
@@ -347,6 +352,12 @@ src/CMakeFiles/pim.dir/main.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/main.cpp \
 
 /usr/include/c++/13/bits/ios_base.h:
 
+/usr/include/x86_64-linux-gnu/bits/endianness.h:
+
+/usr/include/c++/13/bits/basic_string.h:
+
+/usr/include/stdc-predef.h:
+
 /usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h:
 
 /usr/include/c++/13/bits/basic_ios.tcc:
@@ -367,13 +378,13 @@ src/CMakeFiles/pim.dir/main.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/main.cpp \
 
 /usr/include/c++/13/bits/requires_hosted.h:
 
+/usr/include/c++/13/bits/stl_deque.h:
+
 /usr/include/c++/13/bits/string_view.tcc:
 
 /usr/include/features.h:
 
 /usr/include/c++/13/backward/binders.h:
-
-/usr/include/c++/13/bits/stringfwd.h:
 
 /usr/include/asm-generic/errno-base.h:
 
@@ -388,6 +399,10 @@ src/CMakeFiles/pim.dir/main.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/main.cpp \
 /usr/include/c++/13/bits/stl_iterator_base_funcs.h:
 
 /usr/include/asm-generic/errno.h:
+
+/usr/include/c++/13/bits/stringfwd.h:
+
+/usr/include/c++/13/bits/stl_stack.h:
 
 /usr/include/c++/13/cwchar:
 
@@ -407,14 +422,6 @@ src/CMakeFiles/pim.dir/main.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/main.cpp \
 
 /home/ubuntu/Codes/Cpp/Pim/src/core/editor.h:
 
-/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
-
-/usr/include/c++/13/bits/exception.h:
-
-/usr/include/c++/13/streambuf:
-
 /usr/include/c++/13/bits/ostream_insert.h:
 
 /home/ubuntu/Codes/Cpp/Pim/src/core/buffer.h:
@@ -423,8 +430,6 @@ src/CMakeFiles/pim.dir/main.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/main.cpp \
 
 /usr/include/locale.h:
 
-/usr/include/stdc-predef.h:
-
 /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h:
@@ -432,6 +437,18 @@ src/CMakeFiles/pim.dir/main.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/main.cpp \
 /usr/include/c++/13/bits/ptr_traits.h:
 
 /usr/include/c++/13/bits/stl_iterator_base_types.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/usr/include/c++/13/bits/deque.tcc:
+
+/usr/include/c++/13/ext/type_traits.h:
+
+/usr/include/c++/13/bits/stl_vector.h:
+
+/usr/include/ncurses_dll.h:
 
 /usr/include/c++/13/bits/localefwd.h:
 
@@ -455,6 +472,14 @@ src/CMakeFiles/pim.dir/main.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/main.cpp \
 
 /usr/include/unctrl.h:
 
+/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+
+/usr/include/c++/13/streambuf:
+
+/usr/include/c++/13/bits/exception.h:
+
 /usr/include/c++/13/bits/istream.tcc:
 
 /usr/include/c++/13/bits/exception_ptr.h:
@@ -471,6 +496,8 @@ src/CMakeFiles/pim.dir/main.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/main.cpp \
 
 /usr/include/c++/13/ios:
 
+/usr/include/c++/13/bits/stl_uninitialized.h:
+
 /usr/include/c++/13/bits/std_abs.h:
 
 /usr/include/c++/13/bits/postypes.h:
@@ -486,6 +513,8 @@ src/CMakeFiles/pim.dir/main.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/main.cpp \
 /usr/include/c++/13/bits/stl_function.h:
 
 /usr/include/c++/13/bits/utility.h:
+
+/usr/include/c++/13/deque:
 
 /usr/include/c++/13/bits/vector.tcc:
 
@@ -509,9 +538,9 @@ src/CMakeFiles/pim.dir/main.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
-/usr/include/c++/13/bits/stl_pair.h:
-
 /usr/include/c++/13/bits/charconv.h:
+
+/usr/include/c++/13/bits/stl_pair.h:
 
 /usr/include/c++/13/fstream:
 
@@ -529,6 +558,8 @@ src/CMakeFiles/pim.dir/main.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/main.cpp \
 
 /usr/include/c++/13/bits/functional_hash.h:
 
+/usr/include/c++/13/stack:
+
 /usr/include/errno.h:
 
 /usr/include/c++/13/cctype:
@@ -540,12 +571,6 @@ src/CMakeFiles/pim.dir/main.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/main.cpp \
 /usr/include/c++/13/ext/numeric_traits.h:
 
 /usr/include/c++/13/ext/string_conversions.h:
-
-/usr/include/c++/13/ext/type_traits.h:
-
-/usr/include/c++/13/bits/stl_vector.h:
-
-/usr/include/ncurses_dll.h:
 
 /usr/include/c++/13/initializer_list:
 
@@ -593,24 +618,14 @@ src/CMakeFiles/pim.dir/main.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/main.cpp \
 
 /usr/include/stdlib.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
-
-/usr/include/x86_64-linux-gnu/asm/errno.h:
-
-/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
-
-/usr/include/x86_64-linux-gnu/bits/byteswap.h:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs.h:
-
-/usr/include/x86_64-linux-gnu/bits/endian.h:
-
-/usr/include/c++/13/bits/basic_string.h:
-
-/usr/include/x86_64-linux-gnu/bits/endianness.h:
+/usr/include/x86_64-linux-gnu/bits/errno.h:
 
 /usr/include/c++/13/exception:
 
 /usr/include/wctype.h:
 
-/usr/include/x86_64-linux-gnu/bits/errno.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+
+/usr/include/x86_64-linux-gnu/asm/errno.h:
+
+/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:

@@ -21,6 +21,7 @@ src/CMakeFiles/core_lib.dir/core/buffer.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/co
   /usr/include/c++/13/bits/cpp_type_traits.h \
   /usr/include/c++/13/bits/cxxabi_forced.h \
   /usr/include/c++/13/bits/cxxabi_init_exception.h \
+  /usr/include/c++/13/bits/deque.tcc \
   /usr/include/c++/13/bits/exception.h \
   /usr/include/c++/13/bits/exception_defines.h \
   /usr/include/c++/13/bits/exception_ptr.h \
@@ -53,11 +54,13 @@ src/CMakeFiles/core_lib.dir/core/buffer.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/co
   /usr/include/c++/13/bits/stl_algobase.h \
   /usr/include/c++/13/bits/stl_bvector.h \
   /usr/include/c++/13/bits/stl_construct.h \
+  /usr/include/c++/13/bits/stl_deque.h \
   /usr/include/c++/13/bits/stl_function.h \
   /usr/include/c++/13/bits/stl_iterator.h \
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
   /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_stack.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
   /usr/include/c++/13/bits/stl_vector.h \
   /usr/include/c++/13/bits/streambuf.tcc \
@@ -78,6 +81,7 @@ src/CMakeFiles/core_lib.dir/core/buffer.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/co
   /usr/include/c++/13/cwctype \
   /usr/include/c++/13/debug/assertions.h \
   /usr/include/c++/13/debug/debug.h \
+  /usr/include/c++/13/deque \
   /usr/include/c++/13/exception \
   /usr/include/c++/13/ext/alloc_traits.h \
   /usr/include/c++/13/ext/atomicity.h \
@@ -93,6 +97,7 @@ src/CMakeFiles/core_lib.dir/core/buffer.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/co
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/pstl/pstl_config.h \
+  /usr/include/c++/13/stack \
   /usr/include/c++/13/stdexcept \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
@@ -220,6 +225,7 @@ src/CMakeFiles/core_lib.dir/core/editor.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/co
   /usr/include/c++/13/bits/cpp_type_traits.h \
   /usr/include/c++/13/bits/cxxabi_forced.h \
   /usr/include/c++/13/bits/cxxabi_init_exception.h \
+  /usr/include/c++/13/bits/deque.tcc \
   /usr/include/c++/13/bits/exception.h \
   /usr/include/c++/13/bits/exception_defines.h \
   /usr/include/c++/13/bits/exception_ptr.h \
@@ -252,11 +258,13 @@ src/CMakeFiles/core_lib.dir/core/editor.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/co
   /usr/include/c++/13/bits/stl_algobase.h \
   /usr/include/c++/13/bits/stl_bvector.h \
   /usr/include/c++/13/bits/stl_construct.h \
+  /usr/include/c++/13/bits/stl_deque.h \
   /usr/include/c++/13/bits/stl_function.h \
   /usr/include/c++/13/bits/stl_iterator.h \
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
   /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_stack.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
   /usr/include/c++/13/bits/stl_vector.h \
   /usr/include/c++/13/bits/streambuf.tcc \
@@ -277,6 +285,7 @@ src/CMakeFiles/core_lib.dir/core/editor.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/co
   /usr/include/c++/13/cwctype \
   /usr/include/c++/13/debug/assertions.h \
   /usr/include/c++/13/debug/debug.h \
+  /usr/include/c++/13/deque \
   /usr/include/c++/13/exception \
   /usr/include/c++/13/ext/alloc_traits.h \
   /usr/include/c++/13/ext/atomicity.h \
@@ -292,6 +301,7 @@ src/CMakeFiles/core_lib.dir/core/editor.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/co
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/pstl/pstl_config.h \
+  /usr/include/c++/13/stack \
   /usr/include/c++/13/stdexcept \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
@@ -500,7 +510,17 @@ src/CMakeFiles/core_lib.dir/core/editor.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/co
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
-/usr/include/c++/13/bits/stl_uninitialized.h:
+/usr/include/x86_64-linux-gnu/bits/locale.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
+
+/usr/include/x86_64-linux-gnu/bits/floatn.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
 /home/ubuntu/Codes/Cpp/Pim/src/core/editor.h:
 
@@ -534,6 +554,12 @@ src/CMakeFiles/core_lib.dir/core/editor.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/co
 
 /usr/include/c++/13/bits/char_traits.h:
 
+/usr/include/c++/13/bits/ostream.tcc:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h:
+
+/usr/include/c++/13/bits/ios_base.h:
+
 /usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h:
 
 /usr/include/c++/13/bits/basic_ios.tcc:
@@ -554,12 +580,6 @@ src/CMakeFiles/core_lib.dir/core/editor.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/co
 
 /usr/include/c++/13/bits/stl_vector.h:
 
-/usr/include/c++/13/bits/ostream.tcc:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h:
-
-/usr/include/c++/13/bits/ios_base.h:
-
 /usr/include/c++/13/bits/move.h:
 
 /usr/include/x86_64-linux-gnu/sys/single_threaded.h:
@@ -570,13 +590,13 @@ src/CMakeFiles/core_lib.dir/core/editor.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/co
 
 /usr/include/c++/13/bits/requires_hosted.h:
 
+/usr/include/c++/13/bits/stl_deque.h:
+
 /usr/include/c++/13/bits/string_view.tcc:
 
 /usr/include/features.h:
 
 /usr/include/c++/13/backward/binders.h:
-
-/usr/include/c++/13/bits/stringfwd.h:
 
 /usr/include/c++/13/cwctype:
 
@@ -587,6 +607,10 @@ src/CMakeFiles/core_lib.dir/core/editor.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/co
 /usr/include/c++/13/bits/stl_iterator_base_funcs.h:
 
 /usr/include/asm-generic/errno.h:
+
+/usr/include/c++/13/bits/stringfwd.h:
+
+/usr/include/c++/13/bits/stl_stack.h:
 
 /usr/include/c++/13/cwchar:
 
@@ -606,8 +630,6 @@ src/CMakeFiles/core_lib.dir/core/editor.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/co
 
 /usr/include/c++/13/bits/ptr_traits.h:
 
-/usr/include/c++/13/bits/stl_iterator_base_types.h:
-
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
@@ -623,6 +645,12 @@ src/CMakeFiles/core_lib.dir/core/editor.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/co
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
 
 /usr/include/locale.h:
+
+/usr/include/c++/13/bits/stl_iterator_base_types.h:
+
+/usr/include/c++/13/ext/type_traits.h:
+
+/usr/include/c++/13/iostream:
 
 /usr/include/c++/13/bits/stl_bvector.h:
 
@@ -668,17 +696,13 @@ src/CMakeFiles/core_lib.dir/core/editor.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/co
 
 /usr/include/stdc-predef.h:
 
+/usr/include/c++/13/bits/stl_uninitialized.h:
+
 /usr/include/c++/13/bits/std_abs.h:
 
 /usr/include/c++/13/bits/postypes.h:
 
 /usr/include/c++/13/bits/uses_allocator.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
-
-/usr/include/x86_64-linux-gnu/bits/floatn.h:
 
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
 
@@ -689,6 +713,8 @@ src/CMakeFiles/core_lib.dir/core/editor.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/co
 /usr/include/c++/13/bits/stl_function.h:
 
 /usr/include/c++/13/bits/utility.h:
+
+/usr/include/c++/13/deque:
 
 /usr/include/c++/13/bits/vector.tcc:
 
@@ -730,6 +756,8 @@ src/CMakeFiles/core_lib.dir/core/editor.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/co
 
 /usr/include/c++/13/bits/functional_hash.h:
 
+/usr/include/c++/13/stack:
+
 /usr/include/errno.h:
 
 /usr/include/c++/13/cctype:
@@ -741,10 +769,6 @@ src/CMakeFiles/core_lib.dir/core/editor.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/co
 /usr/include/c++/13/ext/numeric_traits.h:
 
 /usr/include/c++/13/ext/string_conversions.h:
-
-/usr/include/c++/13/ext/type_traits.h:
-
-/usr/include/c++/13/iostream:
 
 /usr/include/c++/13/initializer_list:
 
@@ -790,6 +814,12 @@ src/CMakeFiles/core_lib.dir/core/editor.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/co
 
 /usr/include/stdlib.h:
 
+/usr/include/x86_64-linux-gnu/bits/errno.h:
+
+/usr/include/c++/13/exception:
+
+/usr/include/wctype.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 
 /usr/include/x86_64-linux-gnu/asm/errno.h:
@@ -800,20 +830,10 @@ src/CMakeFiles/core_lib.dir/core/editor.cpp.o: /home/ubuntu/Codes/Cpp/Pim/src/co
 
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
+/usr/include/c++/13/bits/deque.tcc:
+
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 
 /usr/include/c++/13/bits/basic_string.h:
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
-
-/usr/include/c++/13/exception:
-
-/usr/include/wctype.h:
-
-/usr/include/x86_64-linux-gnu/bits/errno.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
-
-/usr/include/x86_64-linux-gnu/bits/locale.h:

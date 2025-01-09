@@ -162,4 +162,6 @@ src/CMakeFiles/pim.dir/main.cpp.o: \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
  /home/ubuntu/Codes/Cpp/Pim/src/core/editor.h \
- /home/ubuntu/Codes/Cpp/Pim/src/core/buffer.h
+ /home/ubuntu/Codes/Cpp/Pim/src/core/buffer.h /usr/include/c++/13/stack \
+ /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_deque.h \
+ /usr/include/c++/13/bits/deque.tcc /usr/include/c++/13/bits/stl_stack.h
