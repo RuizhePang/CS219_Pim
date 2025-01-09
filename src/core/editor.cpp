@@ -5,150 +5,219 @@
 #include <stdexcept>
 
 #include "editor.h"
-namespace Pim {
-Editor::Editor(const std::string &filename) : m_filename(filename) {
-  if (!filename.empty()) {
-    loadFile();
-  } else {
-    m_lines.push_back("");
+#include "buffer.h"
+
+namespace Pim
+{
+  Editor::Editor(const std::string &filename) : m_filename(filename)
+  {
+    if (!filename.empty())
+    {
+      m_buffer.loadFromFile(filename);
+    }
+    else
+    {
+      m_buffer.insertNewLine(0);
+    }
+
+    initScreen();
   }
 
-  initScreen();
-}
+  Editor::~Editor() { endwin(); }
 
-Editor::~Editor() { endwin(); }
+  void Editor::initScreen()
+  {
+    initscr();
+    keypad(stdscr, TRUE);
+    noecho();
+    scrollok(stdscr, true); 
 
-void Editor::initScreen() {
-  initscr();
-  keypad(stdscr, TRUE);
-  raw();
-  noecho();
-
-  if (has_colors() == FALSE) {
-    endwin();
-    throw std::runtime_error("Your terminal does not support color");
-  }
-  refresh();
-}
-
-void Editor::run() {
-  while (true) {
-    drawContent();
-    drawStatusLine();
+    if (has_colors() == FALSE)
+    {
+      endwin();
+      throw std::runtime_error("Your terminal does not support color");
+    }
     refresh();
+  }
 
-    int ch = getch();
+  void Editor::run()
+  {
+    while (true)
+    {
+      drawStatusLine();
+      drawContent();
 
-    if (m_isCommandMode) {
-      commandMode(ch);
-    } else {
-      insertMode(ch);
+      raw();
+      doupdate();
+
+      int ch = getch();
+
+      if (m_isCommandMode)
+      {
+        commandMode(ch);
+      }
+      else
+      {
+        insertMode(ch);
+      }
     }
   }
-}
 
-void Editor::drawContent() {
-  clear();
+  void Editor::drawContent()
+  {
 
-  for (size_t i = 0; i < m_lines.size() && i < static_cast<size_t>(LINES - 1);
-       i++) {
-    mvprintw(i, 0, "%s", m_lines[i].c_str());
+    for (size_t i = m_startLine; i < m_buffer.getLines().size() /*&& i < static_cast<size_t>(m_startLine + LINES - 2)*/; i++)
+    {
+      std::string line = m_buffer.getLines()[i]/*.substr(m_startColumn, COLS - 1)*/;
+      mvprintw(i - m_startLine, 0, "%s", line.c_str());
+    }
+    move(m_currentLine - m_startLine, m_currentColumn - m_startColumn);
   }
 
-  move(m_currentLine, m_currentColumn);
-}
+  void Editor::drawStatusLine()
+  {
+    mvprintw(LINES - 2, 0, "%s %s %s", m_filename.empty() ? "[No Name]" : m_filename.c_str(), std::to_string(m_currentColumn).c_str(), std::to_string(m_startColumn).c_str());
+    mvprintw(LINES - 1, 0, "%s", m_isCommandMode ? "" : "-- INSERT --");
+    clrtoeol();
+  }
 
-void Editor::drawStatusLine() {
-  mvprintw(LINES - 1, 0, "%s | %s | Line %d, Col %d",
-           m_isCommandMode ? "COMMAND" : "INSERT",
-           m_filename.empty() ? "[No Name]" : m_filename.c_str(),
-           m_currentLine + 1, m_currentColumn + 1);
-  clrtoeol();
-}
-
-void Editor::commandMode(int ch) {
-  switch (ch) {
+  void Editor::commandMode(int ch)
+  {
+    switch (ch)
+    {
     case 'i':
       m_isCommandMode = false;
       break;
     case 'h':
-      if (m_currentColumn > 0) m_currentColumn--;
+      // if (m_currentColumn > 0 && m_currentColumn == m_startColumn)
+      // {
+      //   if (m_startColumn > COLS / 2)
+      //     m_startColumn -= COLS / 2;
+      //   else
+      //     m_startColumn = 0;
+      // }
+      if (m_currentColumn > 0)
+        m_currentColumn--;
       break;
     case 'l':
-      if (m_currentColumn < m_lines[m_currentLine].length()) m_currentColumn++;
+      // if (m_currentColumn - m_startColumn == static_cast<size_t>(COLS - 2))
+      //   m_startColumn += COLS / 2;
+      if (m_buffer.getLines()[m_currentLine].size() != 0 && m_currentColumn < m_buffer.getLines()[m_currentLine].size() - 1)
+        m_currentColumn++;
       break;
     case 'j':
-      if (m_currentLine < m_lines.size() - 1) m_currentLine++;
+      // if (m_currentLine - m_startLine + 10 == static_cast<size_t>(LINES - 2) && m_currentLine + 10 < m_buffer.getLines().size())
+      //   m_startLine++;
+
+      m_currentColumn = (m_buffer.getLines()[m_currentLine].empty()) ? 0 : std::min(m_currentColumn, m_buffer.getLines()[m_currentLine].size());
+
+      if (m_currentLine < m_buffer.getLines().size() - 1)
+        m_currentLine++;
       break;
     case 'k':
-      if (m_currentLine > 0) m_currentLine--;
+      // if (m_currentLine - m_startLine == 10 && m_startLine != 0)
+      //   m_startLine--;
+
+      if (m_currentLine > 0)
+        m_currentLine--;
+
+      m_currentColumn = (m_buffer.getLines()[m_currentLine].empty()) ? 0 : std::min(m_currentColumn, m_buffer.getLines()[m_currentLine].size());
       break;
-    case ':': {
+    case ':':
+    {
       mvprintw(LINES - 1, 0, ":");
       refresh();
 
       std::string command;
       int cmdCh;
-      while ((cmdCh = getch()) != '\n') {
-        command += cmdCh;
-        addch(cmdCh);
+      while ((cmdCh = getch()) != '\n')
+      {
+        if (cmdCh == KEY_BACKSPACE)
+        {
+          move(LINES - 1, command.size());
+          command.pop_back();
+          delch();
+        }
+        else
+        {
+          command += cmdCh;
+          addch(cmdCh);
+        }
       }
 
-      if (command == "q") {
+      if (command == "q")
+      {
         endwin();
         exit(0);
       }
-      if (command == "w" && !m_filename.empty()) {
-        saveFile();
+      if (command == "w" && !m_filename.empty())
+      {
+        m_buffer.saveToFile(m_filename);
       }
-    } break;
+    }
+    break;
+    }
   }
-}
 
-void Editor::insertMode(int ch) {
-  switch (ch) {
+  void Editor::insertMode(int ch)
+  {
+    switch (ch)
+    {
     case 27:
       m_isCommandMode = true;
       break;
-    case 106:
-      if (m_currentColumn > 0) {
-        m_lines[m_currentLine].erase(m_currentColumn - 1, 1);
+    case 10:
+      // if (m_currentLine - m_startLine == static_cast<size_t>(LINES - 3))
+      //   m_startLine++;
+      m_buffer.insertNewLine(m_currentLine + 1);
+      m_currentLine++;
+      m_currentColumn = 0;
+      break;
+    case KEY_BACKSPACE:
+      if (m_currentColumn > 0)
+      {
+        // if (m_currentColumn == m_startColumn)
+        // {
+        //   if (m_startColumn > COLS / 2)
+        //     m_startColumn -= COLS / 2;
+        //   else
+        //     m_startColumn = 0;
+        // }
+
+        m_buffer.deleteChar(m_currentLine, m_currentColumn - 1);
         m_currentColumn--;
+      }
+      else if (m_currentLine > 0)
+      {
+        // if (m_currentLine == m_startLine + 10 && m_startLine != 0)
+        //   m_startLine--;
+        m_buffer.deleteLine(m_currentLine);
+        m_currentLine--;
+        m_currentColumn = m_buffer.getLines()[m_currentLine].size();
+        // if (m_currentColumn > m_startColumn + COLS)
+        //   m_startColumn = m_currentColumn - COLS;
+      }
+      break;
+    case 9:
+      for (int i = 0; i < 4; i++)
+      {
+        // if (m_currentColumn - m_startColumn == static_cast<size_t>(COLS - 2))
+        //   m_startColumn += COLS / 2;
+        m_buffer.insertChar(m_currentLine, m_currentColumn, ' ');
+        m_currentColumn++;
       }
       break;
     default:
-      printw("%d", ch);
-      m_lines[m_currentLine].insert(m_currentColumn, 1, ch);
-      m_currentColumn++;
+      if (ch >= 32 && ch <= 126)
+      {
+        // if (m_currentColumn - m_startColumn == static_cast<size_t>(COLS - 2))
+        //   m_startColumn += COLS / 2;
+        m_buffer.insertChar(m_currentLine, m_currentColumn, static_cast<char>(ch));
+        m_currentColumn++;
+      }
       break;
-  }
-}
-
-void Editor::loadFile() {
-  std::ifstream input(m_filename);
-  if (!input) {
-    m_lines.clear();
-    m_lines.push_back("");
-    return;
+    }
+    move(m_currentLine, m_currentColumn);
   }
 
-  std::string line;
-  while (std::getline(input, line)) {
-    m_lines.push_back(line);
-  }
-
-  if (m_lines.empty()) {
-    m_lines.push_back("");
-  }
-}
-
-void Editor::saveFile() {
-  if (m_filename.empty()) return;
-
-  std::ofstream output(m_filename);
-  for (const auto &line : m_lines) {
-    output << line << std::endl;
-  }
-}
-
-}  // namespace Pim
+} // namespace Pim

@@ -1,37 +1,41 @@
-#include <vector>
+#ifndef EDITOR_H
+#define EDITOR_H
+
 #include <string>
+#include <vector>
+#include "buffer.h"
 
 namespace Pim
 {
+
   class Editor
   {
   public:
-    Editor(const std::string &filename = "");
+    explicit Editor(const std::string &filename = "");
+
     ~Editor();
 
     void run();
 
   private:
-    std::string m_filename;
-    std::vector<std::string> m_lines;
+    void initScreen();
+    void drawContent();
+    void drawStatusLine();
+    void commandMode(int ch);
+    void insertMode(int ch);
 
-    int m_currentLine = 0;
-    int m_currentColumn = 0;
+    std::string m_filename;
+
+    size_t m_currentLine = 0;
+    size_t m_currentColumn = 0;
+    size_t m_startLine = 0;
+    size_t m_startColumn = 0;
 
     bool m_isCommandMode = true;
 
-    void initScreen();
-
-    void drawContent();
-    void drawStatusLine();
-
-    void handleInput(int ch);
-
-    void insertMode(int ch);
-    void commandMode(int ch);
-
-    void loadFile();
-    void saveFile();
+    Buffer m_buffer;
   };
 
-} // namespace Minivim
+} // namespace Pim
+
+#endif

@@ -3,6 +3,7 @@
 
 src/CMakeFiles/pim.dir/main.cpp.o
  /home/ubuntu/Codes/Cpp/Pim/src/main.cpp
+ /home/ubuntu/Codes/Cpp/Pim/src/core/buffer.h
  /home/ubuntu/Codes/Cpp/Pim/src/core/editor.h
  /usr/include/alloca.h
  /usr/include/asm-generic/errno-base.h
