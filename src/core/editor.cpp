@@ -119,6 +119,14 @@ namespace Pim
     {
       m_isCommandMode = false;
     }
+    if (temp == "a")
+    {
+      m_isCommandMode = false;
+      if (m_currentColumn - m_startColumn == static_cast<size_t>(COLS - 2))
+        m_startColumn += COLS / 2;
+      if (m_buffer.getLines()[m_currentLine].size() != 0 && m_currentColumn < m_buffer.getLines()[m_currentLine].size())
+        m_currentColumn++;
+    }
     if (temp == "h" || temp == "KEY_LEFT")
     {
       if (m_currentColumn > 0 && m_currentColumn == m_startColumn)
