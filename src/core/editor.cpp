@@ -106,7 +106,7 @@ namespace Pim
 
   void Editor::drawStatusLine()
   {
-    mvprintw(LINES - 2, 0, "%s %s %s", m_filename.empty() ? "[No Name]" : m_filename.c_str(), std::to_string(m_currentLine).c_str(), std::to_string(m_startColumn).c_str());
+    mvprintw(LINES - 2, 0, "%s", m_filename.empty() ? "[No Name]" : m_filename.c_str());
     mvprintw(LINES - 1, 0, "%s", m_isCommandMode ? "" : "-- INSERT --");
     clrtoeol();
   }
@@ -199,7 +199,7 @@ namespace Pim
     }
     if (temp == "G")
     {
-      m_currentLine = m_buffer.getLines().size();
+      m_currentLine = m_buffer.getLines().size() - 1;
       m_currentColumn = 0;
 
       if (m_currentLine > static_cast<size_t>(LINES - 2))
