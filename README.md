@@ -1,104 +1,120 @@
-<img src="./png/logo.webp" alt="A logo inspired by the Vim text editor, featuring a bold and modern design with the text 'Pim' in the center. The logo should have a green and dark gray color scheme, with sharp edges and a geometric style. Surround the text with a diamond-shaped outline, similar to the classic Vim logo, and give it a slightly 3D look." style="width:100px; height:auto;" />
-
-
 # Pim - A Simple Text Editor
 
-## Overview
+<img src="./png/logo.webp" alt="A logo inspired by the Vim text editor, featuring a bold and modern design with the text 'Pim' in the center. The logo should have a green and dark gray color scheme, with sharp edges and a geometric style. Surround the text with a diamond-shaped outline, similar to the classic Vim logo, and give it a slightly 3D look." style="width:150px; height:auto;" />
 
-Pim is a simplified version of the classic Vim editor, implementing its core functionalities with three primary modes: Normal, Insert, and Command-Line mode. This project allows for basic text editing and navigation, mimicking the essential commands of Vim.
+---
 
-## Modes in Pim
+## **Overview**
 
-### 1. **Normal Mode**
-Normal Mode is the default mode when you open Pim. In this mode, the user cannot directly type text but instead issues commands to manipulate text. The key actions performed in Normal Mode are:
+Pim is a simplified version of the classic Vim editor, designed to provide essential text editing capabilities with three primary modes: **Normal**, **Insert**, and **Command-Line** modes.
+---
 
-- **Navigation**: Move the cursor using `h`, `j`, `k`, `l` or arrow keys.
-- **Text Manipulation**: Perform operations like deleting, copying and pasting lines.
-- **Switch to Insert Mode**: Press `i` to enter Insert Mode.
-- **Switch to Command-Line Mode**: Press `:` to enter Command-Line Mode.
+## **Modes in Pim**
 
-### 2. **Insert Mode**
-Insert Mode allows you to type and modify the text in the document. You can switch to Insert Mode by pressing `i` in Normal Mode.
+### **1. Normal Mode**
+Normal Mode is the default mode when Pim starts. In this mode, users can navigate and manipulate text without directly entering new content.
 
-* **Switch to Normal Mode**: Press `ESC` to enter Normal Mode.
+Key actions in Normal Mode include:
+- **Navigation**: Move the cursor using `h` (left), `j` (down), `k` (up), `l` (right), or arrow keys.
+- **Text Manipulation**: Delete (`d`), copy (`y`), and paste (`p`) text.
+- **Switch to Insert Mode**: Press `i` to start typing.
+- **Switch to Command-Line Mode**: Press `:` to execute commands.
 
-### 3. **Command-Line Mode**
-In Command-Line Mode, you can execute commands such as save, quit, and other advanced functions. To enter Command-Line Mode, press `:` from Normal Mode.
+### **2. Insert Mode**
+Insert Mode allows users to type and edit text.
+- To enter Insert Mode, press `i` in Normal Mode.
+- To return to Normal Mode, press `ESC`.
 
-## Key Features
+### **3. Command-Line Mode**
+Command-Line Mode enables users to execute commands for file operations and other advanced functions.
+- To enter Command-Line Mode, press `:` in Normal Mode.
+- Common commands include:
+  - `:w` - Save the file.
+  - `:q` - Quit the editor.
+  - `:wq` - Save and quit.
 
-### File and Mode Commands
+---
 
+## **Key Features**
+
+### **File and Mode Commands**
 - `:w` - Save the file.
 - `:q` - Quit the editor.
-- `:wq` - Save the file and quit the editor.
+- `:wq` - Save and quit the editor.
 - `i` - Switch to Insert Mode.
-- `:` - Enter Command-Line Mode for more advanced commands.
+- `:` - Enter Command-Line Mode.
 
-### Cursor Movement
+### **Cursor Movement**
+In Normal Mode, move the cursor using:
+- `h` - Left
+- `j` - Down
+- `k` - Up
+- `l` - Right
+- Arrow keys are also supported for navigation.
 
-In **Normal Mode**, you can move the cursor using the following keys:
+### **Line Navigation**
+- `0` - Move to the beginning of the current line.
+- `$` - Move to the end of the current line.
+- `gg` - Jump to the first line of the file.
+- `G` - Jump to the last line of the file.
 
-- `h` - Move left.
-- `j` - Move down.
-- `k` - Move up.
-- `l` - Move right.
-- Arrow keys are also functional for cursor navigation.
+---
 
-### Line Navigation
+## **Advanced Features**
 
-- `0` - Move the cursor to the beginning of the current line.
-- `$` - Move the cursor to the end of the current line.
-- `gg` - Move the cursor to the first line of the file.
-- `G` - Move the cursor to the last line of the file.
+- **Undo/Redo**: undo (`u`) and redo (`Ctrl + r`) commands.
 
-## Advanced Features (Optional)
-While the basic functionality is implemented, future enhancements can include:
+---
 
-- **Undo/Redo**: Implement undo and redo commands for better editing flexibility.
+## **Installation**
 
-## Installation
+Follow these steps to build and run Pim:
 
-To run Pim, follow these steps:
+### **1. Clone the Repository**
+```bash
+git clone https://github.com/RuizhePang/CS219_Pim.git
+```
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/RuizhePang/CS219_Pim.git
-   ```
+### **2. Navigate to the Project Directory**
+```bash
+cd CS219_Pim
+```
 
-2. Navigate into the project folder:
+### **3. Ensure CMake is Installed**
+Verify that CMake is installed by running:
+```bash
+cmake --version
+```
 
-   ```bash
-   cd CS219_Pim
-   ```
+### **4. Create a Build Directory**
+```bash
+mkdir build && cd build
+```
 
-3. Ensure CMake is installed:
-   ```bash
-   cmake --version
-   ```
+### **5. Generate Build Files with CMake**
+```bash
+cmake ..
+```
 
-4. Create a build directory:
+### **6. Build the Project**
+```bash
+make
+```
 
-   ```bash
-   mkdir build && cd build
-   ```
+### **7. Run the Program**
+```bash
+./src/pim
+```
 
-5. Generate build files:
+---
 
-   ```bash
-   cmake ..
-   ```
+## **Usage Example**
 
-6. Build the project:
-
-   ```bash
-   make
-   ```
-
-7. Run the program:
-
+1. **Open the editor**:
    ```bash
    ./src/pim
    ```
-
-   
+2. **Switch to Insert Mode** by pressing `i` and start typing.
+3. **Press `ESC`** to return to Normal Mode.
+4. **Save the file** by typing `:w` in Command-Line Mode.
+5. **Quit the editor** by typing `:q`.
