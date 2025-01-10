@@ -80,9 +80,9 @@ namespace Pim
         }
     }
 
-    void Buffer::saveSnapshot(size_t cursorLine, size_t cursorColumn)
+    void Buffer::saveSnapshot(size_t cursorLine, size_t cursorColumn, size_t startLine, size_t startColumn)
     {
-        undoStack.push({m_lines, cursorLine, cursorColumn});
+        undoStack.push({m_lines, cursorLine, cursorColumn, startLine, startColumn});
     }
 
     void Buffer::setClipboard(const std::string context)
@@ -95,20 +95,19 @@ namespace Pim
         return clipboard;
     }
 
-    Snapshot Buffer::undo(size_t cursorLine, size_t cursorColumn)
+    Snapshot Buffer::undo(size_t cursorLine, size_t cursorColumn, size_t startLine, size_t startColumn)
     {
-        if (!undoStack.empty())
+        if (undoStack.size() > 1)
         {
-            Snapshot snapshot = undoStack.top();
-            redoStack.push(snapshot);
+            redoStack.push(undoStack.top());
             undoStack.pop();
-            m_lines = snapshot.lines;
-            return snapshot;
+            m_lines = undoStack.top().lines;
+            return undoStack.top();
         }
-        return {m_lines, cursorLine, cursorColumn};
+        return {m_lines, cursorLine, cursorColumn, startLine, startColumn};
     }
 
-    Snapshot Buffer::redo(size_t cursorLine, size_t cursorColumn)
+    Snapshot Buffer::redo(size_t cursorLine, size_t cursorColumn, size_t startLine, size_t startColumn)
     {
         if (!redoStack.empty())
         {
@@ -118,6 +117,6 @@ namespace Pim
             m_lines = snapshot.lines;
             return snapshot;
         }
-        return {m_lines, cursorLine, cursorColumn};
+        return {m_lines, cursorLine, cursorColumn, startLine, startColumn};
     }
 }

@@ -12,6 +12,8 @@ namespace Pim
         std::vector<std::string> lines;
         size_t cursorLine;
         size_t cursorColumn;
+        size_t startLine;
+        size_t startColumn;
     };
 
     class Buffer
@@ -21,6 +23,7 @@ namespace Pim
         std::string clipboard;
         std::stack<Snapshot> undoStack;
         std::stack<Snapshot> redoStack;
+
     public:
         Buffer();
         ~Buffer();
@@ -31,11 +34,11 @@ namespace Pim
         void deleteLine(size_t row);
         void loadFromFile(const std::string &filename);
         void saveToFile(const std::string &filename) const;
-        void saveSnapshot(size_t cursorLine, size_t cursorColumn);
+        void saveSnapshot(size_t cursorLine, size_t cursorColumn, size_t startLine, size_t startColumn);
         void setClipboard(const std::string context);
         std::string getClipboard();
-        Snapshot undo(size_t cursorLine, size_t cursorColumn);
-        Snapshot redo(size_t cursorLine, size_t cursorColumn);
+        Snapshot undo(size_t cursorLine, size_t cursorColumn, size_t startLine, size_t startColumn);
+        Snapshot redo(size_t cursorLine, size_t cursorColumn, size_t startLine, size_t startColumn);
 
         std::vector<std::string> &getLines() { return m_lines; }
         void setLines(const std::vector<std::string> &lines) { m_lines = lines; }

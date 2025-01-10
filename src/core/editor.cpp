@@ -20,6 +20,8 @@ namespace Pim
       m_buffer.insertNewLine(0);
     }
 
+    m_buffer.saveSnapshot(m_currentLine, m_currentColumn, m_startLine, m_startColumn);
+
     initScreen();
   }
 
@@ -57,6 +59,9 @@ namespace Pim
       {
         switch (ch)
         {
+        case 18:
+          cmd = "CTRL_R";
+          break;
         case KEY_LEFT:
           cmd = "KEY_LEFT";
           break;
@@ -215,6 +220,8 @@ namespace Pim
       if (m_buffer.getLines().size() == 0)
         m_buffer.insertNewLine(0);
       m_startColumn = 0;
+
+      m_buffer.saveSnapshot(m_currentLine, m_currentColumn, m_startLine, m_startColumn);
     }
     if (temp == "y")
     {
@@ -236,6 +243,26 @@ namespace Pim
       m_buffer.getLines()[m_currentLine + 1] = context;
       m_currentLine++;
       m_currentColumn = 0;
+
+      m_buffer.saveSnapshot(m_currentLine, m_currentColumn, m_startLine, m_startColumn);
+    }
+    if (temp == "u")
+    {
+      Snapshot snapshot = m_buffer.undo(m_currentLine, m_currentColumn, m_startLine, m_startColumn);
+      m_buffer.getLines() = snapshot.lines;
+      m_currentLine = snapshot.cursorLine;
+      m_currentColumn = snapshot.cursorColumn;
+      m_startLine = snapshot.startLine;
+      m_startColumn = snapshot.startColumn;
+    }
+    if (temp == "CTRL_R")
+    {
+      Snapshot snapshot = m_buffer.redo(m_currentLine, m_currentColumn, m_startLine, m_startColumn);
+      m_buffer.getLines() = snapshot.lines;
+      m_currentLine = snapshot.cursorLine;
+      m_currentColumn = snapshot.cursorColumn;
+      m_startLine = snapshot.startLine;
+      m_startColumn = snapshot.startColumn;
     }
     if (temp == ":")
     {
@@ -285,6 +312,8 @@ namespace Pim
     {
     // ESC
     case 27:
+      if (m_isCommandMode == true)
+        return;
       m_isCommandMode = true;
       if (m_currentColumn > 0 && m_currentColumn == m_startColumn)
       {
@@ -295,6 +324,7 @@ namespace Pim
       }
       if (m_currentColumn > 0)
         m_currentColumn--;
+      m_buffer.saveSnapshot(m_currentLine, m_currentColumn, m_startLine, m_startColumn);
       break;
     // Enter
     case 10:
