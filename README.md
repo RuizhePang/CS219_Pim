@@ -63,4 +63,42 @@ To run Pim, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/minivim.git
+   git clone https://github.com/RuizhePang/CS219_Pim.git
+   ```
+
+2. Navigate into the project folder:
+
+   ```bash
+   cd CS219_Pim
+   ```
+
+3. Ensure CMake is installed:
+   ```bash
+   cmake --version
+   ```
+
+4. Create a build directory:
+
+   ```bash
+   mkdir build && cd build
+   ```
+
+5. Generate build files:
+
+   ```bash
+   cmake ..
+   ```
+
+6. Build the project:
+
+   ```bash
+   make
+   ```
+
+7. Run the program:
+
+   ```bash
+   ./src/pim
+   ```
+
+   
