@@ -1,1 +1,0 @@
-/usr/bin/c++  -Wall -Wextra -Wpedantic CMakeFiles/pim.dir/src/main.cpp.o -o pim  -lcurses /usr/lib/x86_64-linux-gnu/libform.so

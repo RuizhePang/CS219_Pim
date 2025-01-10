@@ -1,2 +1,0 @@
-/usr/bin/ar qc libcore_lib.a CMakeFiles/core_lib.dir/core/editor.cpp.o CMakeFiles/core_lib.dir/core/buffer.cpp.o
-/usr/bin/ranlib libcore_lib.a
