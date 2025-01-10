@@ -1,4 +1,5 @@
-<img src="./png/logo.webp" alt="A logo inspired by the Vim text editor, featuring a bold and modern design with the text 'Pim' in the center. The logo should have a green and dark gray color scheme, with sharp edges and a geometric style. Surround the text with a diamond-shaped outline, similar to the classic Vim logo, and give it a slightly 3D look." style="zoom:25%;" />
+<img src="./png/logo.webp" alt="A logo inspired by the Vim text editor, featuring a bold and modern design with the text 'Pim' in the center. The logo should have a green and dark gray color scheme, with sharp edges and a geometric style. Surround the text with a diamond-shaped outline, similar to the classic Vim logo, and give it a slightly 3D look." style="width:100px; height:auto;" />
+
 
 # Pim - A Simple Text Editor
 
