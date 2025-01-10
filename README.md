@@ -7,6 +7,7 @@
 ## **Overview**
 
 Pim is a simplified version of the classic Vim editor, designed to provide essential text editing capabilities with three primary modes: **Normal**, **Insert**, and **Command-Line** modes.
+
 ---
 
 ## **Modes in Pim**
