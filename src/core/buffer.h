@@ -12,12 +12,13 @@ namespace Pim
         std::vector<std::string> lines;
         size_t cursorLine;
         size_t cursorColumn;
-    }
+    };
 
     class Buffer
     {
     private:
         std::vector<std::string> m_lines;
+        std::string clipboard;
         std::stack<Snapshot> undoStack;
         std::stack<Snapshot> redoStack;
     public:
@@ -31,9 +32,12 @@ namespace Pim
         void loadFromFile(const std::string &filename);
         void saveToFile(const std::string &filename) const;
         void saveSnapshot(size_t cursorLine, size_t cursorColumn);
-        Snapshot undo();
+        void setClipboard(const std::string context);
+        std::string getClipboard();
+        Snapshot undo(size_t cursorLine, size_t cursorColumn);
+        Snapshot redo(size_t cursorLine, size_t cursorColumn);
 
-        const std::vector<std::string> &getLines() const { return m_lines; }
+        std::vector<std::string> &getLines() { return m_lines; }
         void setLines(const std::vector<std::string> &lines) { m_lines = lines; }
     };
 }

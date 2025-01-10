@@ -21,7 +21,7 @@ namespace Pim
     void initScreen();
     void drawContent();
     void drawStatusLine();
-    void commandMode(int ch);
+    void commandMode(std::string& cmd);
     void insertMode(int ch);
 
     std::string m_filename;

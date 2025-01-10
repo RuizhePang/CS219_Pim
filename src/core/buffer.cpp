@@ -85,6 +85,16 @@ namespace Pim
         undoStack.push({m_lines, cursorLine, cursorColumn});
     }
 
+    void Buffer::setClipboard(const std::string context)
+    {
+        clipboard = context;
+    }
+
+    std::string Buffer::getClipboard()
+    {
+        return clipboard;
+    }
+
     Snapshot Buffer::undo(size_t cursorLine, size_t cursorColumn)
     {
         if (!undoStack.empty())
