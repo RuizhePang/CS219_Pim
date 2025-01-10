@@ -123,7 +123,7 @@ namespace Pim
     {
       if (m_currentColumn > 0 && m_currentColumn == m_startColumn)
       {
-        if (m_startColumn > COLS / 2)
+        if (m_startColumn > static_cast<size_t>(COLS / 2))
           m_startColumn -= COLS / 2;
         else
           m_startColumn = 0;
@@ -164,12 +164,12 @@ namespace Pim
     if (temp == "$")
     {
       m_currentColumn = m_buffer.getLines()[m_currentLine].size();
-      if (m_currentColumn > COLS - 1)
+      if (m_currentColumn > static_cast<size_t>(COLS - 1))
         m_startColumn = m_currentColumn - COLS / 2;
 
       if (m_currentColumn > 0 && m_currentColumn == m_startColumn)
       {
-        if (m_startColumn > COLS / 2)
+        if (m_startColumn > static_cast<size_t>(COLS / 2))
           m_startColumn -= COLS / 2;
         else
           m_startColumn = 0;
@@ -194,7 +194,7 @@ namespace Pim
       m_currentLine = m_buffer.getLines().size();
       m_currentColumn = 0;
 
-      if (m_currentLine > LINES - 2)
+      if (m_currentLine > static_cast<size_t>(LINES - 2))
         m_startLine = m_currentLine - LINES + 2;
       else
         m_startLine = 0;
@@ -317,7 +317,7 @@ namespace Pim
       m_isCommandMode = true;
       if (m_currentColumn > 0 && m_currentColumn == m_startColumn)
       {
-        if (m_startColumn > COLS / 2)
+        if (m_startColumn > static_cast<size_t>(COLS / 2))
           m_startColumn -= COLS / 2;
         else
           m_startColumn = 0;
@@ -343,7 +343,7 @@ namespace Pim
       {
         if (m_currentColumn == m_startColumn)
         {
-          if (m_startColumn > COLS / 2)
+          if (m_startColumn > static_cast<size_t>(COLS / 2))
             m_startColumn -= COLS / 2;
           else
             m_startColumn = 0;
@@ -375,7 +375,7 @@ namespace Pim
     case KEY_LEFT:
       if (m_currentColumn > 0 && m_currentColumn == m_startColumn)
       {
-        if (m_startColumn > COLS / 2)
+        if (m_startColumn > static_cast<size_t>(COLS / 2))
           m_startColumn -= COLS / 2;
         else
           m_startColumn = 0;
