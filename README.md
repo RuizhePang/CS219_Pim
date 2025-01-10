@@ -1,4 +1,4 @@
-<img src="https://files.oaiusercontent.com/file-GEknjWCeZvj2k7xayhrSb6?se=2025-01-10T06%3A29%3A04Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D99037a95-ad42-4bc0-a576-70098c2ef1c5.webp&sig=eLrsjRTM3ufOu0Q%2BbgN/HPlXWNyzUa5txdLdt/QR3c4%3D" alt="A logo inspired by the Vim text editor, featuring a bold and modern design with the text 'Pim' in the center. The logo should have a green and dark gray color scheme, with sharp edges and a geometric style. Surround the text with a diamond-shaped outline, similar to the classic Vim logo, and give it a slightly 3D look." style="zoom:25%;" />
+<img src="./png/logo.webp" alt="A logo inspired by the Vim text editor, featuring a bold and modern design with the text 'Pim' in the center. The logo should have a green and dark gray color scheme, with sharp edges and a geometric style. Surround the text with a diamond-shaped outline, similar to the classic Vim logo, and give it a slightly 3D look." style="zoom:25%;" />
 
 # Pim - A Simple Text Editor
 
